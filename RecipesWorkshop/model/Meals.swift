@@ -52,7 +52,6 @@ class Result: Codable {
     let renditions: [Rendition]?
     let showID: Int?
     let prepTimeMinutes: Int?
-   // let nutrition: [String:String]?
     let name, description, servingsNounPlural: String?
     let price: Price?
     let servingsNounSingular: String?
