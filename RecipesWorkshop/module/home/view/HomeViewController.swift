@@ -1,20 +1,46 @@
 import UIKit
+import Kingfisher
 
-class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITabBarDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var categoryCollection: UICollectionView!
-    
+    @IBOutlet weak var recipesTable: UITableView!
     var categoryItems : Array<Result>!
+    var viewModel : HomeViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicator.startAnimating()
+        viewModel = HomeViewModel()
         categoryItems = []
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
-        
-        
+        let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
+        recipesTable.register(nib, forCellReuseIdentifier: "cell")
+        getData(categoryName: "breakfast")
+        indicator.stopAnimating()
+        print("items count \(categoryItems.count)")
     }
+    
+    func getData(categoryName:String){
+        self.categoryItems = []
+        self.recipesTable.reloadData()
+        self.indicator.startAnimating()
+        self.viewModel.bindCategoryMealsToViewController = {[weak self ] in
+            DispatchQueue.main.async { [self] in
+                self?.categoryItems = self?.viewModel.result
+                self!.recipesTable.reloadData()
+                
+            }
+            
+        }
+        viewModel.fetchCategoryMeals(url: categoryName)
+        self.indicator.stopAnimating()
+    }
+    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -24,30 +50,39 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return 5
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell : CategoryCollectionViewCell  = categoryCollection.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         cell.bg.layer.cornerRadius = 20.0
+        
+        
+        var img = ""
+        var name = ""
+        
         switch indexPath.row{
             
         case 0 :
-            cell.categoryImg.image = UIImage(named: "fire")
-            cell.categoryName.text = "Popular"
+            name = categories[0].categoryName
+            img = categories[0].cataegoryImg
+            cell.bg.backgroundColor = UIColor(named: "main")
         case 1 :
-            cell.categoryImg.image = UIImage(named: "breakfast")
-            cell.categoryName.text = "Breakfast"
+            name = categories[1].categoryName
+            img = categories[1].cataegoryImg
         case 2 :
-            cell.categoryImg.image = UIImage(named: "lunch")
-            cell.categoryName.text = "Launch"
+            name = categories[2].categoryName
+            img = categories[2].cataegoryImg
         case 3 :
-            cell.categoryImg.image = UIImage(named: "dinner")
-            cell.categoryName.text = "Dinner"
+            name = categories[3].categoryName
+            img = categories[3].cataegoryImg
         default:
-            cell.categoryImg.image = UIImage(named: "cake")
-            cell.categoryName.text = "Dessert"
+            name = categories[4].categoryName
+            img = categories[4].cataegoryImg
             
         }
-        
+        cell.categoryImg.image = UIImage(named: img)
+        cell.categoryName.text = name
         return cell
     }
     
@@ -55,6 +90,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let selectedItem : CategoryCollectionViewCell = categoryCollection.cellForItem(at: indexPath)! as! CategoryCollectionViewCell
         selectedItem.bg.backgroundColor = UIColor(named: "main")
+        getData(categoryName:categoryNames[indexPath.row] )
         self.UnSelectItems(selectedItem: indexPath,collectionView: collectionView)
     }
     
@@ -75,23 +111,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 let unSelectedItem : CategoryCollectionViewCell = categoryCollection.cellForItem(at: otherIndexPath)! as! CategoryCollectionViewCell
                 unSelectedItem.bg.backgroundColor = UIColor(named: "categorybg")
             }
-       
+            
         }
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
@@ -100,4 +124,30 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
+    
+}
+
+
+extension HomeViewController :UITableViewDelegate,UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.recipesTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeTableViewCell
+        var mealImgUrl = URL(string: categoryItems[indexPath.row].thumbnailURL ?? "")
+        cell.mealImg.kf.setImage(with: mealImgUrl)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryItems.count
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
 }

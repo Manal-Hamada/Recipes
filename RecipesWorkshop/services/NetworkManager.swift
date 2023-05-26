@@ -15,7 +15,7 @@ protocol NetworkServicing{
 class NetworkManager : NetworkServicing{
     
     
-    func getDataOverNetwork<T:Decodable>(url:String, compilitionHandler: @escaping (T?) -> Void)
+    func getDataOverNetwork<T:Decodable>(url :String, compilitionHandler: @escaping (T?) -> Void)
     {
         
         let header: HTTPHeaders = [
@@ -23,7 +23,7 @@ class NetworkManager : NetworkServicing{
             "X-RapidAPI-Host": "tasty.p.rapidapi.com"
         ]
         
-        AF.request("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=breakfast", method: .get, headers: header).responseJSON{ response in
+        AF.request("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=\(url)", method: .get, headers: header).responseJSON{ response in
             do{
                 let result = try JSONDecoder().decode(T.self, from: response.data!)
                 debugPrint(result)
@@ -34,6 +34,9 @@ class NetworkManager : NetworkServicing{
             }
         }
     }
+    
+    
+    
 }
     
 

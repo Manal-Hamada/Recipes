@@ -9,6 +9,13 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var favBtn: UIButton!
+    @IBOutlet weak var mealImg: UIImageView!
+    @IBOutlet weak var mealName: UILabel!
+    @IBOutlet weak var chefName: UILabel!
+    @IBOutlet weak var foodType: UILabel!
+    @IBOutlet weak var servings: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

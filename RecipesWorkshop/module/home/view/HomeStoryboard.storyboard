@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NB9-0A-do0">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,6 +23,11 @@
                                 <rect key="frame" x="16" y="269" width="361" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="HKM-6G-eti">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" name="main"/>
+                                </activityIndicatorView>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="add-5M-XhE"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="cdt-QL-tN0"/>
@@ -39,20 +45,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SUH-7N-3ki">
-                                    <size key="itemSize" width="128" height="109"/>
+                                    <size key="itemSize" width="128" height="104"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yVc-qo-RW5">
-                                        <rect key="frame" x="0.0" y="-4.666666666666667" width="128" height="109"/>
+                                        <rect key="frame" x="0.0" y="-2" width="128" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QIc-VW-Ict">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="109"/>
+                                        <size key="customSize" width="128" height="104"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -67,11 +73,24 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="wx1-DF-McG"/>
                     <connections>
                         <outlet property="categoryCollection" destination="lh8-cV-gAT" id="qUy-ag-fW2"/>
+                        <outlet property="indicator" destination="HKM-6G-eti" id="MD7-4O-MdO"/>
+                        <outlet property="recipesTable" destination="b7l-8l-Agg" id="cjS-v6-ub5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-616.03053435114498" y="88.732394366197184"/>
+        </scene>
+        <!--FavotiteViewController-->
+        <scene sceneID="uRL-xm-WgO">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FavotiteViewController" storyboardName="FavoriteStoryboard" referencedIdentifier="FavotiteViewController" id="fbB-p5-n5N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="heart.fill" catalog="system" id="fN3-JM-Us0"/>
+                    <navigationItem key="navigationItem" id="hLf-Kf-gT0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pem-nl-gHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418" y="-11"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iQ9-rc-I5Z">
@@ -80,13 +99,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ct5-tj-B3H"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dTa-Tq-mgd">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="white"/>
-                        <color key="barTintColor" name="main"/>
+                        <color key="barTintColor" name="white"/>
                         <color key="selectedImageTintColor" name="main"/>
                     </tabBar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="VXC-2W-kAn"/>
+                        <segue destination="fbB-p5-n5N" kind="relationship" relationship="viewControllers" id="0IZ-Hv-dPc"/>
+                        <segue destination="fbB-p5-n5N" kind="show" id="TNb-AC-Z35"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcK-hZ-mLk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -110,13 +132,17 @@
             <point key="canvasLocation" x="-385" y="-1385"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0IZ-Hv-dPc"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <namedColor name="dark">
-            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32499998807907104" green="0.32499998807907104" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main">
-            <color red="0.85098039215686272" green="0.58823529411764708" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.58799999952316284" blue="0.31799998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

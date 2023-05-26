@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 20" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-lg-Rms" userLabel="recipe_bg">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-lg-Rms" userLabel="recipe_bg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 21" translatesAutoresizingMaskIntoConstraints="NO" id="UeX-Ng-pgj">
@@ -104,7 +105,7 @@ Recipe</string>
                                 <rect key="frame" x="0.0" y="0.0" width="41" height="38"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK7-3w-B1k">
-                                <rect key="frame" x="0.0" y="0.0" width="41" height="38"/>
+                                <rect key="frame" x="0.0" y="12" width="41" height="14"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
@@ -114,16 +115,16 @@ Recipe</string>
                         <constraints>
                             <constraint firstItem="7PM-2Q-Ofy" firstAttribute="top" secondItem="CtM-JS-KRZ" secondAttribute="top" id="2jF-h0-Vp7"/>
                             <constraint firstAttribute="trailing" secondItem="7PM-2Q-Ofy" secondAttribute="trailing" id="6HM-ro-kgF"/>
+                            <constraint firstAttribute="trailing" secondItem="xK7-3w-B1k" secondAttribute="trailing" id="Hue-ty-7V0"/>
                             <constraint firstItem="7PM-2Q-Ofy" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="leading" id="Ktc-Md-v7w"/>
-                            <constraint firstItem="xK7-3w-B1k" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="leading" id="MuJ-bR-wlp"/>
                             <constraint firstItem="7PM-2Q-Ofy" firstAttribute="top" secondItem="CtM-JS-KRZ" secondAttribute="top" id="NWU-bv-z1T"/>
-                            <constraint firstAttribute="bottom" secondItem="xK7-3w-B1k" secondAttribute="bottom" id="O91-ie-sN7"/>
+                            <constraint firstItem="xK7-3w-B1k" firstAttribute="top" secondItem="CtM-JS-KRZ" secondAttribute="top" constant="12" id="Q65-Va-EQZ"/>
                             <constraint firstAttribute="bottom" secondItem="7PM-2Q-Ofy" secondAttribute="bottom" id="QjB-R7-WV4"/>
                             <constraint firstAttribute="height" constant="38" id="S3D-q4-cdB"/>
                             <constraint firstItem="7PM-2Q-Ofy" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="leading" id="U5E-na-KSF"/>
+                            <constraint firstAttribute="bottom" secondItem="xK7-3w-B1k" secondAttribute="bottom" constant="12" id="XEb-gU-YKC"/>
                             <constraint firstAttribute="bottom" secondItem="7PM-2Q-Ofy" secondAttribute="bottom" id="Ygh-dK-mdm"/>
-                            <constraint firstItem="xK7-3w-B1k" firstAttribute="top" secondItem="CtM-JS-KRZ" secondAttribute="top" id="c1H-5L-fpJ"/>
-                            <constraint firstAttribute="trailing" secondItem="xK7-3w-B1k" secondAttribute="trailing" id="lTs-3s-2U9"/>
+                            <constraint firstItem="xK7-3w-B1k" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="leading" id="ZHq-YO-Ddt"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -136,6 +137,7 @@ Recipe</string>
                     <constraint firstAttribute="trailing" secondItem="UeX-Ng-pgj" secondAttribute="trailing" id="JW8-Vl-8cu"/>
                     <constraint firstItem="rxp-lg-Rms" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="POl-fC-Ax6"/>
                     <constraint firstAttribute="trailing" secondItem="rxp-lg-Rms" secondAttribute="trailing" id="Uth-1I-if9"/>
+                    <constraint firstAttribute="trailing" secondItem="UeX-Ng-pgj" secondAttribute="trailing" id="Vqd-Pp-Ru0"/>
                     <constraint firstItem="UeX-Ng-pgj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bQA-LJ-GhU"/>
                     <constraint firstItem="rxp-lg-Rms" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bVU-qM-ukb"/>
                     <constraint firstAttribute="bottom" secondItem="rxp-lg-Rms" secondAttribute="bottom" id="dd0-3F-O6n"/>
@@ -145,12 +147,19 @@ Recipe</string>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-206" y="40"/>
+            <connections>
+                <outlet property="chefName" destination="5ib-tf-Htj" id="Ws2-YJ-oUi"/>
+                <outlet property="favBtn" destination="xK7-3w-B1k" id="5hD-DR-Kk6"/>
+                <outlet property="foodType" destination="4C4-Eb-m0g" id="8e9-IE-zsC"/>
+                <outlet property="mealImg" destination="rxp-lg-Rms" id="hDs-Qw-Gdn"/>
+                <outlet property="mealName" destination="Cyt-16-kfi" id="CTF-Ms-ZS7"/>
+                <outlet property="servings" destination="PCZ-ys-yv1" id="4hI-Sr-9i8"/>
+            </connections>
+            <point key="canvasLocation" x="-206.10687022900763" y="39.436619718309863"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Rectangle 123" width="41" height="41"/>
-        <image name="Rectangle 20" width="383" height="174"/>
         <image name="Rectangle 21" width="383" height="174"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
