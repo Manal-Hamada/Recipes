@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3AB6EE9411B57684B16FEF5C /* Pods_RecipesWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E5B7F6C34C032E06994247 /* Pods_RecipesWorkshop.framework */; };
 		9BC0AE1C2A20D01000D2EF7D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0AE1B2A20D01000D2EF7D /* DetailsViewController.swift */; };
+		9BC0AE212A210CA500D2EF7D /* DetailsViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0AE202A210CA500D2EF7D /* DetailsViewController+UITableView.swift */; };
 		9D329E8D2A20BAAE00112A31 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */; };
 		9D329E8F2A20BABD00112A31 /* FavoriteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E8E2A20BABD00112A31 /* FavoriteStoryboard.storyboard */; };
 		9D329E912A20BAC800112A31 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E902A20BAC800112A31 /* HomeStoryboard.storyboard */; };
@@ -55,6 +56,7 @@
 		7A341B0503E05BC92EDF53CB /* Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop-RecipesWorkshopUITests/Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99A7190D3CD4650C5F533434 /* Pods-RecipesWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop/Pods-RecipesWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
 		9BC0AE1B2A20D01000D2EF7D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		9BC0AE202A210CA500D2EF7D /* DetailsViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+UITableView.swift"; sourceTree = "<group>"; };
 		9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		9D329E8E2A20BABD00112A31 /* FavoriteStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteStoryboard.storyboard; sourceTree = "<group>"; };
 		9D329E902A20BAC800112A31 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9BC0AE1D2A2106DA00D2EF7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BC0AE202A210CA500D2EF7D /* DetailsViewController+UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9D329E7F2A20B9E400112A31 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		9D329E802A20B9F400112A31 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				9BC0AE1D2A2106DA00D2EF7D /* Extensions */,
 				9D329E862A20BA7200112A31 /* details */,
 				9D329E852A20BA6200112A31 /* favorite */,
 				9D329E842A20BA5B00112A31 /* home */,
@@ -521,6 +532,7 @@
 				9D5BA0342A20A35600E71A49 /* RecipesWorkshop.xcdatamodeld in Sources */,
 				9D329E932A20BB5200112A31 /* dumy.swift in Sources */,
 				9D329E972A20BB7C00112A31 /* FavViewModel.swift in Sources */,
+				9BC0AE212A210CA500D2EF7D /* DetailsViewController+UITableView.swift in Sources */,
 				9D329E992A20BB8A00112A31 /* HomeViewModel.swift in Sources */,
 				9D5BA02E2A20A35600E71A49 /* ViewController.swift in Sources */,
 				9D5BA02A2A20A35600E71A49 /* AppDelegate.swift in Sources */,
