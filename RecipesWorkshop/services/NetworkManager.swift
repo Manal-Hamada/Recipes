@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol NetworkServicing{
     
-    func getDataOverNetwork(url:String, compilitionHandler: @escaping (MyResponse?) -> Void)
+    func getDataOverNetwork<T:Decodable>(url:String, compilitionHandler: @escaping (T?) -> Void)
 }
 class NetworkManager : NetworkServicing{
     
-    func getDataOverNetwork(url:String, compilitionHandler: @escaping (MyResponse?) -> Void)
+    
+    func getDataOverNetwork<T:Decodable>(url:String, compilitionHandler: @escaping (T?) -> Void)
     {
         
         var header: HTTPHeaders = [
@@ -23,17 +25,15 @@ class NetworkManager : NetworkServicing{
         
         AF.request("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=breakfast", method: .get, headers: header).responseJSON{ response in
             do{
-                //if(response.result.isSuccess){
-                let result: MyResponse = try JSONDecoder().decode(MyResponse.self, from: response.data!)
-                print("leagues size : \(result.results?.count)")
+                let result = try JSONDecoder().decode(T.self, from: response.data!)
                 debugPrint(result)
                 compilitionHandler(result)
-                // }
             }catch let error {
                 print(error.localizedDescription)
                 print(String(describing: error))
             }
         }
     }
-    
 }
+    
+

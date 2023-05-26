@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-RecipesWorkshopTests/Pods-RecipesWorkshopTests-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-RecipesWorkshop-RecipesWorkshopUITests/Pods-RecipesWorkshop-RecipesWorkshopUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
