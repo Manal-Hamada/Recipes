@@ -18,7 +18,7 @@ class NetworkManager : NetworkServicing{
     func getDataOverNetwork<T:Decodable>(url:String, compilitionHandler: @escaping (T?) -> Void)
     {
         
-        var header: HTTPHeaders = [
+        let header: HTTPHeaders = [
             "X-RapidAPI-Key": "18beea3c30msha8cf6449f96b814p13fb95jsn2277702dfdff",
             "X-RapidAPI-Host": "tasty.p.rapidapi.com"
         ]
