@@ -7,12 +7,12 @@
 
 import Foundation
 
-class MyResponse: Codable {
+class MyResponse: Decodable {
     var count: Int?
     var results: [Result]?
 }
 
-class Result: Codable {
+class Result: Decodable {
     let credits: [Brand]?
     let isOneTop: Bool?
     let canonicalID: String?
@@ -112,13 +112,12 @@ class Result: Codable {
         case brandID = "brand_id"
     }
 
- 
 }
 
 
 
 // MARK: - Brand
-class Brand: Codable {
+class Brand: Decodable {
     let name: String?
     let id: Int?
     let slug: String?
@@ -136,7 +135,7 @@ class Brand: Codable {
 
 
 // MARK: - Instruction
-class Instruction: Codable {
+class Instruction: Decodable {
     let appliance: String?
     let endTime: Int?
     let temperature: Int?
@@ -156,7 +155,7 @@ class Instruction: Codable {
 }
 
 // MARK: - Nutrition
-class Nutrition: Codable {
+class Nutrition: Decodable {
     let fiber: Int?
     let updatedAt: Date?
     let protein, fat, calories, sugar: Int?
@@ -174,7 +173,7 @@ class Nutrition: Codable {
 
 
 // MARK: - Price
-class Price: Codable {
+class Price: Decodable {
     let total: Int?
     let updatedAt: String?
     let portion, consumptionTotal, consumptionPortion: Int?
@@ -192,7 +191,7 @@ class Price: Codable {
 
 
 // MARK: - Rendition
-class Rendition: Codable {
+class Rendition: Decodable {
     let bitRate: Int?
     let aspect: String?
     let minimumBitRate: Int?
@@ -226,7 +225,7 @@ class Rendition: Codable {
 
 
 // MARK: - Section
-class Section: Codable {
+class Section: Decodable {
     let components: [Component]?
     let name: String?
     let position: Int?
@@ -235,7 +234,7 @@ class Section: Codable {
 }
 
 // MARK: - Component
-class Component: Codable {
+class Component: Decodable {
     let rawText, extraComment: String?
     let ingredient: Ingredient?
     let id, position: Int?
@@ -250,7 +249,7 @@ class Component: Codable {
 }
 
 // MARK: - Ingredient
-class Ingredient: Codable {
+class Ingredient: Decodable {
     let updatedAt: Int?
     let name: String?
     let createdAt: Int?
@@ -271,7 +270,7 @@ class Ingredient: Codable {
 }
 
 // MARK: - Measurement
-class Measurement: Codable {
+class Measurement: Decodable {
     let unit: Unit?
     let quantity: String?
     let id: Int?
@@ -280,7 +279,7 @@ class Measurement: Codable {
 }
 
 // MARK: - Unit
-class Unit: Codable {
+class Unit: Decodable {
     let displaySingular, abbreviation: String?
     let system: String?
     let name, displayPlural: String?
@@ -297,7 +296,7 @@ class Unit: Codable {
 
 
 // MARK: - Show
-class Show: Codable {
+class Show: Decodable {
     let name: String?
     let id: Int?
 
@@ -306,7 +305,7 @@ class Show: Codable {
 
 
 // MARK: - Tag
-class Tag: Codable {
+class Tag: Decodable {
     let rootTagType: String?
     let name: String?
     let id: Int?
@@ -323,14 +322,14 @@ class Tag: Codable {
 
 
 // MARK: - Topic
-class Topic: Codable {
+class Topic: Decodable {
     let name, slug: String?
 
    
 }
 
 // MARK: - TotalTimeTier
-class TotalTimeTier: Codable {
+class TotalTimeTier: Decodable {
     let tier: String?
     let displayTier: String?
 
@@ -344,7 +343,7 @@ class TotalTimeTier: Codable {
 
 
 // MARK: - UserRatings
-class UserRatings: Codable {
+class UserRatings: Decodable {
     let score: Double?
     let countNegative, countPositive: Int?
 

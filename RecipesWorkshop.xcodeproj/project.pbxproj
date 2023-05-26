@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E956162A214CB500AF3344 /* LocalRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E956152A214CB500AF3344 /* LocalRecipe.swift */; };
 		9AE5B5FBAB329B0674C01101 /* Pods_RecipesWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDDB497B87B00F17111D9E3 /* Pods_RecipesWorkshop.framework */; };
 		9D329E8D2A20BAAE00112A31 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */; };
 		9D329E8F2A20BABD00112A31 /* FavoriteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E8E2A20BABD00112A31 /* FavoriteStoryboard.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04E956152A214CB500AF3344 /* LocalRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipe.swift; sourceTree = "<group>"; };
 		07E69E82C96186228886F1AE /* Pods-RecipesWorkshop-RecipesWorkshopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop-RecipesWorkshopUITests.release.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop-RecipesWorkshopUITests/Pods-RecipesWorkshop-RecipesWorkshopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1BDDB497B87B00F17111D9E3 /* Pods_RecipesWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipesWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFF2956D8969DCF5BA8238A /* Pods_RecipesWorkshopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipesWorkshopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9D329E9A2A20BB9C00112A31 /* Meals.swift */,
+				04E956152A214CB500AF3344 /* LocalRecipe.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			files = (
 				9D329E9B2A20BB9C00112A31 /* Meals.swift in Sources */,
 				9D5BA0342A20A35600E71A49 /* RecipesWorkshop.xcdatamodeld in Sources */,
+				04E956162A214CB500AF3344 /* LocalRecipe.swift in Sources */,
 				9D7BEC882A20CE6E003E83FC /* FavCoreData.swift in Sources */,
 				9D7BEC8C2A20D256003E83FC /* RecipeTableViewCell.swift in Sources */,
 				9DFB14E22A20ECED00F28534 /* FavotiteViewController.swift in Sources */,
