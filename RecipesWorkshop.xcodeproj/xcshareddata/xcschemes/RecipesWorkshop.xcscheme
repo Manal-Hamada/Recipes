@@ -26,8 +26,29 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9D5BA03E2A20A35800E71A49"
+               BuildableName = "RecipesWorkshopTests.xctest"
+               BlueprintName = "RecipesWorkshopTests"
+               ReferencedContainer = "container:RecipesWorkshop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9D5BA0482A20A35800E71A49"
+               BuildableName = "RecipesWorkshopUITests.xctest"
+               BlueprintName = "RecipesWorkshopUITests"
+               ReferencedContainer = "container:RecipesWorkshop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

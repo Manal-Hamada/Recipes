@@ -14,7 +14,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = HomeViewModel()
+        tabBarController?.tabBar.layer.cornerRadius = 20.0
+      
+        
+        viewModel = HomeViewModel(network: NetworkManager())
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         recipesTable.register(nib, forCellReuseIdentifier: "cell")

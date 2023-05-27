@@ -17,12 +17,15 @@ protocol HomeViewModelType {
 
 class HomeViewModel : HomeViewModelType{
    
+    var network: NetworkServicing!
+    init(network : NetworkServicing){
+        
+        self.network = network
+    }
     
     var bindCategoryMealsToViewController: (() -> ())?
     var bindCategoryCellsToViewController: (() -> ())?
-    
-    
-    var networkManager : NetworkManager = NetworkManager()
+  
     var categories : [HomeCollectionViewCellViewModel] = HomeCollectionViewCellViewModel().setCategories()
     var result : [Result] = []
     
@@ -34,12 +37,11 @@ class HomeViewModel : HomeViewModelType{
     
     func fetchCategoryMeals(tag:String,endPoint:EndPoint){
         
-        networkManager.getDataOverNetwork(tag: tag, endPoint: endPoint, compilitionHandler:{  [weak self] (result : MyResponse?) in
+        network.getDataOverNetwork(tag: tag, endPoint: endPoint, compilitionHandler:{  [weak self] (result : MyResponse?) in
             
             self?.result = result?.results ?? []
             self?.bindCategoryMealsToViewController?()
-            
-            
+  
         })
         
     }

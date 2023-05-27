@@ -156,7 +156,7 @@
         <!--Details View Controller-->
         <scene sceneID="6Zx-XJ-ulP">
             <objects>
-                <viewController id="Tsr-t6-efk" customClass="DetailsViewController" customModule="RecipesWorkshop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details" id="Tsr-t6-efk" customClass="DetailsViewController" customModule="RecipesWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MFk-E1-Rxm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
