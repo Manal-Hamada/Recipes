@@ -9,11 +9,21 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
 
+<<<<<<< HEAD
     @IBOutlet weak var recipeBgImg: UIImageView!
     @IBOutlet weak var recipeCrediteNameLabel: UILabel!
     @IBOutlet weak var recipeServings: UILabel!
     @IBOutlet weak var recipeCatecoryLabel: UILabel!
     @IBOutlet weak var recipeNameLabel: UILabel!
+=======
+    @IBOutlet weak var recipeServingsLabel: UILabel!
+    @IBOutlet weak var recipeCategoryLabel: UILabel!
+    @IBOutlet weak var recipeOwnerName: UILabel!
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeBgImg: UIImageView!
+    var recipeID : Int!
+    
+>>>>>>> fav-core-data
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -112,7 +112,6 @@ class Result: Decodable {
         case brandID = "brand_id"
     }
 
- 
 }
 
 

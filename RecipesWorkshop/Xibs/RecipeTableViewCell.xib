@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -149,11 +150,19 @@ Recipe</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+<<<<<<< HEAD
                 <outlet property="recipeBgImg" destination="rxp-lg-Rms" id="yK2-da-84Y"/>
                 <outlet property="recipeCatecoryLabel" destination="4C4-Eb-m0g" id="cwq-X0-bIb"/>
                 <outlet property="recipeCrediteNameLabel" destination="5ib-tf-Htj" id="cX1-xy-w2U"/>
                 <outlet property="recipeNameLabel" destination="Cyt-16-kfi" id="i0L-eJ-XRY"/>
                 <outlet property="recipeServings" destination="PCZ-ys-yv1" id="e0O-c7-XWY"/>
+=======
+                <outlet property="recipeBgImg" destination="rxp-lg-Rms" id="npp-u0-OsY"/>
+                <outlet property="recipeCategoryLabel" destination="4C4-Eb-m0g" id="7uj-wP-htK"/>
+                <outlet property="recipeNameLabel" destination="Cyt-16-kfi" id="GKN-z3-igx"/>
+                <outlet property="recipeOwnerName" destination="5ib-tf-Htj" id="gHP-9K-f7d"/>
+                <outlet property="recipeServingsLabel" destination="PCZ-ys-yv1" id="weC-ln-G76"/>
+>>>>>>> fav-core-data
             </connections>
             <point key="canvasLocation" x="-206" y="40"/>
         </tableViewCell>

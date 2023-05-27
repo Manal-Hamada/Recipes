@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="104" width="393" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Q1v-G1-WPO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Q1v-G1-WPO">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q1v-G1-WPO" id="YQl-gM-ffa">
@@ -30,10 +31,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+<<<<<<< HEAD
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no favourite place holder" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-qc-6VT">
                                 <rect key="frame" x="0.0" y="268" width="393" height="316"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="2CL-Vj-Og5"/>
+=======
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no favourite place holder" translatesAutoresizingMaskIntoConstraints="NO" id="bDD-HS-P0f">
+                                <rect key="frame" x="0.0" y="276" width="393" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="YSC-zh-v1T"/>
+>>>>>>> fav-core-data
                                 </constraints>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-4I-NCg">
@@ -47,11 +55,18 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bDD-HS-P0f" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="3WI-hx-RW9"/>
                             <constraint firstItem="rKA-Nn-O28" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7ig-oE-9wb"/>
+<<<<<<< HEAD
                             <constraint firstItem="oFx-qc-6VT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8dW-ir-ftB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oFx-qc-6VT" secondAttribute="trailing" id="AeJ-ka-hXl"/>
                             <constraint firstItem="oFx-qc-6VT" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Hbt-WU-B2y"/>
                             <constraint firstItem="oFx-qc-6VT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tfw-Hx-bvc"/>
+=======
+                            <constraint firstItem="bDD-HS-P0f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KBO-gH-J4V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bDD-HS-P0f" secondAttribute="trailing" id="PFZ-Zx-Xzb"/>
+                            <constraint firstItem="bDD-HS-P0f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dCd-wq-eVd"/>
+>>>>>>> fav-core-data
                             <constraint firstItem="rKA-Nn-O28" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="ddv-Lh-AXc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rKA-Nn-O28" secondAttribute="trailing" id="ggP-u8-hL8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rKA-Nn-O28" secondAttribute="bottom" id="kWP-K7-2Vz"/>
@@ -59,7 +74,11 @@
                     </view>
                     <connections>
                         <outlet property="favTableView" destination="rKA-Nn-O28" id="VgF-Fa-gUY"/>
+<<<<<<< HEAD
                         <outlet property="noFavimg" destination="oFx-qc-6VT" id="ObP-da-ltj"/>
+=======
+                        <outlet property="noFavImg" destination="bDD-HS-P0f" id="0pf-bW-7Ru"/>
+>>>>>>> fav-core-data
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
