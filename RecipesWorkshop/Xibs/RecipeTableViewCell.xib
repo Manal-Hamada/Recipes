@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,19 +133,19 @@ Recipe</string>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="CtM-JS-KRZ" secondAttribute="trailing" constant="272" id="0pv-HJ-zog"/>
-                    <constraint firstAttribute="bottom" secondItem="UeX-Ng-pgj" secondAttribute="bottom" id="1qw-5L-hpc"/>
+                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="trailing" secondItem="rxp-lg-Rms" secondAttribute="trailing" id="5Jz-xN-OGP"/>
                     <constraint firstItem="CtM-JS-KRZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="6nq-1V-LfY"/>
-                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ANK-mv-UrJ"/>
                     <constraint firstItem="rc3-ST-sqj" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="trailing" constant="133" id="HKw-qI-qMm"/>
-                    <constraint firstAttribute="trailing" secondItem="UeX-Ng-pgj" secondAttribute="trailing" id="JW8-Vl-8cu"/>
+                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="leading" secondItem="rxp-lg-Rms" secondAttribute="leading" id="OrN-eT-6Qi"/>
                     <constraint firstItem="rxp-lg-Rms" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="POl-fC-Ax6"/>
                     <constraint firstAttribute="trailing" secondItem="rxp-lg-Rms" secondAttribute="trailing" id="Uth-1I-if9"/>
-                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bQA-LJ-GhU"/>
                     <constraint firstItem="rxp-lg-Rms" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bVU-qM-ukb"/>
                     <constraint firstAttribute="bottom" secondItem="rxp-lg-Rms" secondAttribute="bottom" id="dd0-3F-O6n"/>
+                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="bottom" secondItem="rxp-lg-Rms" secondAttribute="bottom" id="eBS-nK-eHM"/>
                     <constraint firstItem="CtM-JS-KRZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="nsi-di-Sr8"/>
                     <constraint firstAttribute="bottom" secondItem="rc3-ST-sqj" secondAttribute="bottom" constant="16" id="qUQ-Tb-YOP"/>
                     <constraint firstItem="rc3-ST-sqj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qvL-39-XAP"/>
+                    <constraint firstItem="UeX-Ng-pgj" firstAttribute="top" secondItem="rxp-lg-Rms" secondAttribute="top" id="vY7-bk-Y6l"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -157,7 +157,7 @@ Recipe</string>
                 <outlet property="recipeOwnerName" destination="5ib-tf-Htj" id="gHP-9K-f7d"/>
                 <outlet property="recipeServingsLabel" destination="PCZ-ys-yv1" id="weC-ln-G76"/>
             </connections>
-            <point key="canvasLocation" x="-206" y="40"/>
+            <point key="canvasLocation" x="-206.10687022900763" y="39.436619718309863"/>
         </tableViewCell>
     </objects>
     <resources>
