@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3AB6EE9411B57684B16FEF5C /* Pods_RecipesWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E5B7F6C34C032E06994247 /* Pods_RecipesWorkshop.framework */; };
+		9B377FE62A21F05B008F2325 /* DetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B377FE42A21F05B008F2325 /* DetailsTableCell.swift */; };
+		9B377FE72A21F05B008F2325 /* DetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B377FE52A21F05B008F2325 /* DetailsTableCell.xib */; };
+		9B377FEA2A2216E4008F2325 /* SimilarReciepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B377FE82A2216E4008F2325 /* SimilarReciepsCell.swift */; };
+		9B377FEB2A2216E4008F2325 /* SimilarReciepsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B377FE92A2216E4008F2325 /* SimilarReciepsCell.xib */; };
 		9BC0AE1C2A20D01000D2EF7D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0AE1B2A20D01000D2EF7D /* DetailsViewController.swift */; };
 		9BC0AE212A210CA500D2EF7D /* DetailsViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0AE202A210CA500D2EF7D /* DetailsViewController+UITableView.swift */; };
 		9D329E8D2A20BAAE00112A31 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */; };
@@ -55,6 +59,10 @@
 		578AAB140B0C88904142968A /* Pods-RecipesWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop.release.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop/Pods-RecipesWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		7A341B0503E05BC92EDF53CB /* Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop-RecipesWorkshopUITests/Pods-RecipesWorkshop-RecipesWorkshopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99A7190D3CD4650C5F533434 /* Pods-RecipesWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-RecipesWorkshop/Pods-RecipesWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
+		9B377FE42A21F05B008F2325 /* DetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableCell.swift; sourceTree = "<group>"; };
+		9B377FE52A21F05B008F2325 /* DetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableCell.xib; sourceTree = "<group>"; };
+		9B377FE82A2216E4008F2325 /* SimilarReciepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarReciepsCell.swift; sourceTree = "<group>"; };
+		9B377FE92A2216E4008F2325 /* SimilarReciepsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarReciepsCell.xib; sourceTree = "<group>"; };
 		9BC0AE1B2A20D01000D2EF7D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9BC0AE202A210CA500D2EF7D /* DetailsViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+UITableView.swift"; sourceTree = "<group>"; };
 		9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -198,6 +206,10 @@
 			children = (
 				9D329E8C2A20BAAE00112A31 /* DetailsStoryboard.storyboard */,
 				9BC0AE1B2A20D01000D2EF7D /* DetailsViewController.swift */,
+				9B377FE42A21F05B008F2325 /* DetailsTableCell.swift */,
+				9B377FE52A21F05B008F2325 /* DetailsTableCell.xib */,
+				9B377FE82A2216E4008F2325 /* SimilarReciepsCell.swift */,
+				9B377FE92A2216E4008F2325 /* SimilarReciepsCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -415,6 +427,8 @@
 				9D5BA0392A20A35700E71A49 /* LaunchScreen.storyboard in Resources */,
 				9D5BA0362A20A35700E71A49 /* Assets.xcassets in Resources */,
 				9D329E8D2A20BAAE00112A31 /* DetailsStoryboard.storyboard in Resources */,
+				9B377FEB2A2216E4008F2325 /* SimilarReciepsCell.xib in Resources */,
+				9B377FE72A21F05B008F2325 /* DetailsTableCell.xib in Resources */,
 				9D329E8F2A20BABD00112A31 /* FavoriteStoryboard.storyboard in Resources */,
 				9D329E912A20BAC800112A31 /* HomeStoryboard.storyboard in Resources */,
 				9D5BA0312A20A35600E71A49 /* Main.storyboard in Resources */,
@@ -531,12 +545,14 @@
 				9D329E9B2A20BB9C00112A31 /* Meals.swift in Sources */,
 				9D5BA0342A20A35600E71A49 /* RecipesWorkshop.xcdatamodeld in Sources */,
 				9D329E932A20BB5200112A31 /* dumy.swift in Sources */,
+				9B377FE62A21F05B008F2325 /* DetailsTableCell.swift in Sources */,
 				9D329E972A20BB7C00112A31 /* FavViewModel.swift in Sources */,
 				9BC0AE212A210CA500D2EF7D /* DetailsViewController+UITableView.swift in Sources */,
 				9D329E992A20BB8A00112A31 /* HomeViewModel.swift in Sources */,
 				9D5BA02E2A20A35600E71A49 /* ViewController.swift in Sources */,
 				9D5BA02A2A20A35600E71A49 /* AppDelegate.swift in Sources */,
 				9D5BA02C2A20A35600E71A49 /* SceneDelegate.swift in Sources */,
+				9B377FEA2A2216E4008F2325 /* SimilarReciepsCell.swift in Sources */,
 				9D329E952A20BB6C00112A31 /* DetailsViewModel.swift in Sources */,
 				9BC0AE1C2A20D01000D2EF7D /* DetailsViewController.swift in Sources */,
 			);
