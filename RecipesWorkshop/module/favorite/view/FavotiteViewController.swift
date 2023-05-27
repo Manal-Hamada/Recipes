@@ -24,8 +24,8 @@ class FavotiteViewController: UIViewController , UITableViewDelegate, UITableVie
         
         favViewModel = FavViewModel(favCoreData: FavCodeData.sharedDB)
         
-        let recipe = LocalRecipe(id: 1, name: "name", owner: "owner", category: "cat", yields: "tield", bgImg: "")
-        favViewModel.insertRecipe(newRecipe: recipe)
+//        let recipe = LocalRecipe(id: 1, name: "name", owner: "owner", category: "cat", yields: "tield", bgImg: "")
+//        favViewModel.insertRecipe(newRecipe: recipe)
         
         favViewModel.bindResultToViewController = {
             [weak self] in
