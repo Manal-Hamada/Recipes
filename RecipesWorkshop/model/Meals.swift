@@ -7,12 +7,12 @@
 
 import Foundation
 
-class MyResponse: Decodable {
+class MyResponse: Codable {
     var count: Int?
     var results: [Result]?
 }
 
-class Result: Decodable {
+class Result: Codable {
     let credits: [Brand]?
     let isOneTop: Bool?
     let canonicalID: String?
@@ -117,7 +117,7 @@ class Result: Decodable {
 
 
 // MARK: - Brand
-class Brand: Decodable {
+class Brand: Codable {
     let name: String?
     let id: Int?
     let slug: String?
@@ -135,7 +135,7 @@ class Brand: Decodable {
 
 
 // MARK: - Instruction
-class Instruction: Decodable {
+class Instruction: Codable {
     let appliance: String?
     let endTime: Int?
     let temperature: Int?
@@ -155,7 +155,7 @@ class Instruction: Decodable {
 }
 
 // MARK: - Nutrition
-class Nutrition: Decodable {
+class Nutrition: Codable {
     let fiber: Int?
     let updatedAt: Date?
     let protein, fat, calories, sugar: Int?
@@ -173,7 +173,7 @@ class Nutrition: Decodable {
 
 
 // MARK: - Price
-class Price: Decodable {
+class Price: Codable {
     let total: Int?
     let updatedAt: String?
     let portion, consumptionTotal, consumptionPortion: Int?
@@ -191,7 +191,7 @@ class Price: Decodable {
 
 
 // MARK: - Rendition
-class Rendition: Decodable {
+class Rendition: Codable {
     let bitRate: Int?
     let aspect: String?
     let minimumBitRate: Int?
@@ -225,7 +225,7 @@ class Rendition: Decodable {
 
 
 // MARK: - Section
-class Section: Decodable {
+class Section: Codable {
     let components: [Component]?
     let name: String?
     let position: Int?
@@ -234,7 +234,7 @@ class Section: Decodable {
 }
 
 // MARK: - Component
-class Component: Decodable {
+class Component: Codable {
     let rawText, extraComment: String?
     let ingredient: Ingredient?
     let id, position: Int?
@@ -249,7 +249,7 @@ class Component: Decodable {
 }
 
 // MARK: - Ingredient
-class Ingredient: Decodable {
+class Ingredient: Codable {
     let updatedAt: Int?
     let name: String?
     let createdAt: Int?
@@ -270,7 +270,7 @@ class Ingredient: Decodable {
 }
 
 // MARK: - Measurement
-class Measurement: Decodable {
+class Measurement: Codable {
     let unit: Unit?
     let quantity: String?
     let id: Int?
@@ -279,7 +279,7 @@ class Measurement: Decodable {
 }
 
 // MARK: - Unit
-class Unit: Decodable {
+class Unit: Codable {
     let displaySingular, abbreviation: String?
     let system: String?
     let name, displayPlural: String?
@@ -296,7 +296,7 @@ class Unit: Decodable {
 
 
 // MARK: - Show
-class Show: Decodable {
+class Show: Codable {
     let name: String?
     let id: Int?
 
@@ -305,7 +305,7 @@ class Show: Decodable {
 
 
 // MARK: - Tag
-class Tag: Decodable {
+class Tag: Codable {
     let rootTagType: String?
     let name: String?
     let id: Int?
@@ -322,14 +322,14 @@ class Tag: Decodable {
 
 
 // MARK: - Topic
-class Topic: Decodable {
+class Topic: Codable {
     let name, slug: String?
 
    
 }
 
 // MARK: - TotalTimeTier
-class TotalTimeTier: Decodable {
+class TotalTimeTier: Codable {
     let tier: String?
     let displayTier: String?
 
@@ -343,7 +343,7 @@ class TotalTimeTier: Decodable {
 
 
 // MARK: - UserRatings
-class UserRatings: Decodable {
+class UserRatings: Codable {
     let score: Double?
     let countNegative, countPositive: Int?
 
