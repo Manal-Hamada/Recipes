@@ -109,6 +109,9 @@ Recipe</string>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="favBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wn1-xv-rxj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,6 +150,7 @@ Recipe</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="favBtn" destination="xK7-3w-B1k" id="les-ni-ECz"/>
                 <outlet property="recipeBgImg" destination="rxp-lg-Rms" id="npp-u0-OsY"/>
                 <outlet property="recipeCategoryLabel" destination="4C4-Eb-m0g" id="7uj-wP-htK"/>
                 <outlet property="recipeNameLabel" destination="Cyt-16-kfi" id="GKN-z3-igx"/>
