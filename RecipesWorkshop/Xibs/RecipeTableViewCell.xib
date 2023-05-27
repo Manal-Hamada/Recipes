@@ -18,14 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-lg-Rms" userLabel="recipe_bg">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-lg-Rms" userLabel="recipe_bg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 21" translatesAutoresizingMaskIntoConstraints="NO" id="UeX-Ng-pgj">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 21" translatesAutoresizingMaskIntoConstraints="NO" id="UeX-Ng-pgj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rc3-ST-sqj">
-                        <rect key="frame" x="181" y="16" width="100" height="134"/>
+                        <rect key="frame" x="180" y="16" width="100" height="134"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-16-kfi">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
@@ -99,13 +99,13 @@ Recipe</string>
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtM-JS-KRZ">
-                        <rect key="frame" x="7" y="16" width="41" height="38"/>
+                        <rect key="frame" x="7" y="16" width="40" height="38"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 123" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-2Q-Ofy">
-                                <rect key="frame" x="0.0" y="0.0" width="41" height="38"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="38"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK7-3w-B1k">
-                                <rect key="frame" x="0.0" y="0.0" width="41" height="38"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="38"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
@@ -132,7 +132,6 @@ Recipe</string>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="CtM-JS-KRZ" secondAttribute="trailing" constant="272" id="0pv-HJ-zog"/>
                     <constraint firstItem="UeX-Ng-pgj" firstAttribute="trailing" secondItem="rxp-lg-Rms" secondAttribute="trailing" id="5Jz-xN-OGP"/>
                     <constraint firstItem="CtM-JS-KRZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="6nq-1V-LfY"/>
                     <constraint firstItem="rc3-ST-sqj" firstAttribute="leading" secondItem="CtM-JS-KRZ" secondAttribute="trailing" constant="133" id="HKw-qI-qMm"/>
@@ -142,6 +141,7 @@ Recipe</string>
                     <constraint firstItem="rxp-lg-Rms" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bVU-qM-ukb"/>
                     <constraint firstAttribute="bottom" secondItem="rxp-lg-Rms" secondAttribute="bottom" id="dd0-3F-O6n"/>
                     <constraint firstItem="UeX-Ng-pgj" firstAttribute="bottom" secondItem="rxp-lg-Rms" secondAttribute="bottom" id="eBS-nK-eHM"/>
+                    <constraint firstAttribute="trailing" secondItem="rc3-ST-sqj" secondAttribute="trailing" constant="40" id="jW9-ws-G6r"/>
                     <constraint firstItem="CtM-JS-KRZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="nsi-di-Sr8"/>
                     <constraint firstAttribute="bottom" secondItem="rc3-ST-sqj" secondAttribute="bottom" constant="16" id="qUQ-Tb-YOP"/>
                     <constraint firstItem="rc3-ST-sqj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qvL-39-XAP"/>

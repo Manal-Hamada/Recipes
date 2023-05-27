@@ -1,25 +1,53 @@
 import UIKit
+import Lottie
+import Kingfisher
+import Reachability
 
-class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITabBarDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
-    
-    
+    @IBOutlet weak var loading: AnimationView!
     @IBOutlet weak var categoryCollection: UICollectionView!
+    @IBOutlet weak var recipesTable: UITableView!
     
-    var categoryItems : Array<Result>!
+    var viewModel : HomeViewModelType?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        categoryItems = []
+        viewModel = HomeViewModel()
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
-        
-        
+        let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
+        recipesTable.register(nib, forCellReuseIdentifier: "cell")
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        playLottie()
+        getData(categoryName: viewModel?.getCategoryAtIndexPath(row: 0).categoryendpoint ?? "")
     }
     
+    func getData(categoryName:String){
+        
+        self.viewModel?.bindCategoryMealsToViewController = {[weak self] in
+            DispatchQueue.main.async {
+                self?.recipesTable.reloadData()
+                self?.loading.stop()
+                self?.recipesTable.isHidden = false
+            }
+        }
+        viewModel?.fetchCategoryMeals(tag: categoryName, endPoint: .recipes)
+    }
+    
+    
+    func playLottie(){
+        recipesTable.isHidden = true
+        self.loading.contentMode = .scaleAspectFit
+        self.loading.loopMode = .loop
+        self.loading.animationSpeed = 0.5
+        self.loading.play()
+    
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -28,42 +56,36 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let cell : CategoryCollectionViewCell  = categoryCollection.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         cell.bg.layer.cornerRadius = 20.0
-        switch indexPath.row{
-            
-        case 0 :
-            cell.categoryImg.image = UIImage(named: "fire")
-            cell.categoryName.text = "Popular"
-        case 1 :
-            cell.categoryImg.image = UIImage(named: "breakfast")
-            cell.categoryName.text = "Breakfast"
-        case 2 :
-            cell.categoryImg.image = UIImage(named: "lunch")
-            cell.categoryName.text = "Launch"
-        case 3 :
-            cell.categoryImg.image = UIImage(named: "dinner")
-            cell.categoryName.text = "Dinner"
-        default:
-            cell.categoryImg.image = UIImage(named: "cake")
-            cell.categoryName.text = "Dessert"
-            
-        }
         
+    
+        let category = viewModel?.getCategoryAtIndexPath(row: indexPath.row)
+        
+        if indexPath.row == 0 {
+            cell.isSelected = true
+            cell.bg.backgroundColor = UIColor(named: "main")
+        }
+
+        
+        cell.categoryImg.image = UIImage(named: category?.cataegoryImg ?? "")
+        cell.categoryName.text = category?.categoryName
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        playLottie()
         let selectedItem : CategoryCollectionViewCell = categoryCollection.cellForItem(at: indexPath)! as! CategoryCollectionViewCell
         selectedItem.bg.backgroundColor = UIColor(named: "main")
         self.UnSelectItems(selectedItem: indexPath,collectionView: collectionView)
+        viewModel?.fetchCategoryMeals(tag: viewModel?.getCategoryAtIndexPath(row: indexPath.row).categoryendpoint ?? "", endPoint: .recipes)
+       //getData(categoryName:viewModel?.getCategoryAtIndexPath(row: indexPath.row).categoryendpoint ?? "" )
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = categoryCollection.frame.width /*UIScreen.main.bounds.width*/
-        
-        
-        
+        let width = categoryCollection.frame.width
+
         return CGSize(width:( width/5 - 2 ), height: 100)
     }
     
@@ -75,29 +97,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 let unSelectedItem : CategoryCollectionViewCell = categoryCollection.cellForItem(at: otherIndexPath)! as! CategoryCollectionViewCell
                 unSelectedItem.bg.backgroundColor = UIColor(named: "categorybg")
             }
-       
+            
         }
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryItems.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
 }
