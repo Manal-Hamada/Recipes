@@ -30,9 +30,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-g6-iOg" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="76.666666666666686" y="362" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Iy6-pz-6Nd"/>
+                                    <constraint firstAttribute="height" constant="128" id="g7R-ul-a9T"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Recpies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eug-IR-L5b">
-                                <rect key="frame" x="127" y="112" width="177" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <rect key="frame" x="127" y="112" width="177" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" name="dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,9 +81,10 @@
                                     <outlet property="delegate" destination="qH1-Sw-Np5" id="vEA-fx-4bT"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f64-wo-COY">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f64-wo-COY">
                                 <rect key="frame" x="16" y="316" width="361" height="405"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qH1-Sw-Np5" id="xYO-sw-gA6"/>
                                     <outlet property="delegate" destination="qH1-Sw-Np5" id="Byk-Lr-A2h"/>
@@ -90,15 +102,18 @@
                             <constraint firstItem="745-zf-Sn7" firstAttribute="bottom" secondItem="f64-wo-COY" secondAttribute="bottom" constant="48" id="NKo-Ms-G4s"/>
                             <constraint firstItem="BlZ-3e-u4Z" firstAttribute="top" secondItem="Cv1-uY-bGZ" secondAttribute="bottom" constant="19" id="SvT-FZ-OPE"/>
                             <constraint firstItem="745-zf-Sn7" firstAttribute="trailing" secondItem="Eug-IR-L5b" secondAttribute="trailing" constant="89" id="TJA-gh-0Nn"/>
+                            <constraint firstItem="a2Q-g6-iOg" firstAttribute="centerX" secondItem="PWH-M8-KE7" secondAttribute="centerX" id="UqL-er-pMl"/>
                             <constraint firstItem="Cv1-uY-bGZ" firstAttribute="top" secondItem="745-zf-Sn7" secondAttribute="top" constant="67" id="Y0t-0z-Ykp"/>
                             <constraint firstItem="Eug-IR-L5b" firstAttribute="top" secondItem="745-zf-Sn7" secondAttribute="top" constant="9" id="fg9-yt-QGJ"/>
                             <constraint firstItem="745-zf-Sn7" firstAttribute="trailing" secondItem="BlZ-3e-u4Z" secondAttribute="trailing" constant="16" id="oar-n5-pBF"/>
                             <constraint firstItem="f64-wo-COY" firstAttribute="leading" secondItem="745-zf-Sn7" secondAttribute="leading" constant="16" id="tSr-bV-nwf"/>
+                            <constraint firstItem="a2Q-g6-iOg" firstAttribute="centerY" secondItem="PWH-M8-KE7" secondAttribute="centerY" id="yrl-nT-5ng"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="NmD-Ds-TOZ"/>
                     <connections>
                         <outlet property="categoryCollection" destination="BlZ-3e-u4Z" id="mnJ-zZ-Pcv"/>
+                        <outlet property="loading" destination="a2Q-g6-iOg" id="ll0-3r-KVX"/>
                         <outlet property="recipesTable" destination="f64-wo-COY" id="g1a-uw-wuT"/>
                     </connections>
                 </viewController>
