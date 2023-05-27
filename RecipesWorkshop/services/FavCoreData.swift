@@ -10,17 +10,17 @@ import CoreData
 import UIKit
 
 class FavCodeData {
-//    static let sharedDB = FavCodeData()
-//
-//    var manager : NSManagedObjectContext!
-//    var leagues : [NSManagedObject] = []
-//
-//    private init(){
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        manager = appDelegate.persistentContainer.viewContext
-//    }
-//
-//    func insert (newLeagues : Result){
+    static let sharedDB = FavCodeData()
+    
+    var manager : NSManagedObjectContext!
+    var recipes : [NSManagedObject] = []
+    
+    private init(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        manager = appDelegate.persistentContainer.viewContext
+    }
+    
+    func insert (newLeagues : Result){
 //        //2-
 //        let entity = NSEntityDescription.entity(forEntityName: "Leagues", in: manager)
 //        //3-
@@ -39,10 +39,10 @@ class FavCodeData {
 //        }catch let error{
 //            print(error.localizedDescription)
 //        }
-//
-//    }
-//
-//    func fetchAll()-> Array<Result>{
+        
+    }
+    
+    func fetchAll()-> Array<Result>{
 //        let fetch = NSFetchRequest<NSManagedObject>(entityName: "Leagues")
 //
 //        do{
@@ -51,7 +51,7 @@ class FavCodeData {
 //            print(error.localizedDescription)
 //        }
 //        var league = Result()
-//        var leaguesList = Array<Result>()
+        var leaguesList = Array<Result>()
 //        for item in leagues{
 //
 //            league.leagueKey = item.value(forKey: "leagueKey") as? Int
@@ -64,10 +64,10 @@ class FavCodeData {
 //            leaguesList.append(league)
 //            league = Result()
 //        }
-//        return leaguesList
-//    }
-//
-//    func deleteMovie(newLeague:Result){
+        return leaguesList
+    }
+    
+    func deleteMovie(newLeague:Result){
 //        let fetch = NSFetchRequest<NSManagedObject>(entityName: "Leagues")
 //        //var leagues = self.fetchAll()
 //
@@ -88,8 +88,8 @@ class FavCodeData {
 //        }catch let error{
 //            print(error.localizedDescription)
 //        }
-//    }
-//
+    }
+    
     //    func deleteAll (){
     //
     //        let fetch = NSFetchRequest<NSManagedObject>(entityName: "Movie")

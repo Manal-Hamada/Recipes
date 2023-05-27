@@ -30,6 +30,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no favourite place holder" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-qc-6VT">
+                                <rect key="frame" x="0.0" y="268" width="393" height="316"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="2CL-Vj-Og5"/>
+                                </constraints>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-4I-NCg">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -42,6 +48,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rKA-Nn-O28" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7ig-oE-9wb"/>
+                            <constraint firstItem="oFx-qc-6VT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8dW-ir-ftB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oFx-qc-6VT" secondAttribute="trailing" id="AeJ-ka-hXl"/>
+                            <constraint firstItem="oFx-qc-6VT" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Hbt-WU-B2y"/>
+                            <constraint firstItem="oFx-qc-6VT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tfw-Hx-bvc"/>
                             <constraint firstItem="rKA-Nn-O28" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="ddv-Lh-AXc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rKA-Nn-O28" secondAttribute="trailing" id="ggP-u8-hL8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rKA-Nn-O28" secondAttribute="bottom" id="kWP-K7-2Vz"/>
@@ -49,14 +59,16 @@
                     </view>
                     <connections>
                         <outlet property="favTableView" destination="rKA-Nn-O28" id="VgF-Fa-gUY"/>
+                        <outlet property="noFavimg" destination="oFx-qc-6VT" id="ObP-da-ltj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="no favourite place holder" width="267" height="316"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
