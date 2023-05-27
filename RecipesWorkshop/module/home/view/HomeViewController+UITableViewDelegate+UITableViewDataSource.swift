@@ -19,11 +19,11 @@ extension HomeViewController :UITableViewDelegate,UITableViewDataSource {
         let recipe = viewModel?.getRecipeAtIndexPath(row: row)
         let mealImgUrl = URL(string: recipe?.thumbnailURL ?? "")
         
-        cell.mealImg.layer.cornerRadius = 20.0
-        cell.mealImg.kf.setImage(with: mealImgUrl)
-        cell.servings.text = "\(String(describing: recipe?.numServings ?? 0))"
-        cell.chefName.text = recipe?.credits?[0].name
-        cell.mealName.text = recipe?.name
+        cell.recipeBgImg.layer.cornerRadius = 20.0
+        cell.recipeBgImg.kf.setImage(with: mealImgUrl)
+        cell.recipeServingsLabel.text = "\(String(describing: recipe?.numServings ?? 0))"
+        cell.recipeOwnerName.text = recipe?.credits?[0].name
+        cell.recipeNameLabel.text = recipe?.name
         
         return cell
     }

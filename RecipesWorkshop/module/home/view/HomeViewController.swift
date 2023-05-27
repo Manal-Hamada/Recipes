@@ -18,12 +18,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         recipesTable.register(nib, forCellReuseIdentifier: "cell")
-        getData(categoryName: viewModel?.getCategoryAtIndexPath(row: 0).categoryendpoint ?? "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         playLottie()
+        getData(categoryName: viewModel?.getCategoryAtIndexPath(row: 0).categoryendpoint ?? "")
     }
     
     func getData(categoryName:String){

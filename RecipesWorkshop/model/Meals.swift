@@ -112,7 +112,6 @@ class Result: Codable {
         case brandID = "brand_id"
     }
 
- 
 }
 
 
