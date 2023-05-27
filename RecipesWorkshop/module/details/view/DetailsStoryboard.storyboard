@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsr-t6-efk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsr-t6-efk">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -155,14 +156,13 @@
         <!--Details View Controller-->
         <scene sceneID="6Zx-XJ-ulP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sRS-fc-DbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Tsr-t6-efk" customClass="DetailsViewController" customModule="RecipesWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MFk-E1-Rxm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC6-iy-7S8">
-                                <rect key="frame" x="0.0" y="-59.999999999999993" width="414" height="941"/>
+                                <rect key="frame" x="0.0" y="-60" width="414" height="956"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rcy-Me-GN2">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="978.66666666666663"/>
@@ -347,11 +347,11 @@
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9YN-YD-Yoo">
                                                         <rect key="frame" x="0.0" y="36" width="414" height="214"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eOM-PQ-R8r">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eOM-PQ-R8r">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells/>
                                                     </collectionView>
@@ -377,6 +377,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pW9-mm-nNm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OC6-iy-7S8" secondAttribute="bottom" id="AT2-HL-Tg4"/>
@@ -384,7 +385,6 @@
                             <constraint firstItem="OC6-iy-7S8" firstAttribute="width" secondItem="MFk-E1-Rxm" secondAttribute="width" id="SYY-pp-0un"/>
                             <constraint firstItem="OC6-iy-7S8" firstAttribute="top" secondItem="MFk-E1-Rxm" secondAttribute="top" constant="-60" id="Yzl-ho-pO6"/>
                             <constraint firstItem="OC6-iy-7S8" firstAttribute="trailing" secondItem="MFk-E1-Rxm" secondAttribute="trailing" id="e1l-hZ-zZN"/>
-                            <constraint firstItem="OC6-iy-7S8" firstAttribute="height" secondItem="MFk-E1-Rxm" secondAttribute="height" multiplier="1.06696" id="fd7-jj-nBm"/>
                         </constraints>
                     </view>
                     <connections>
@@ -395,6 +395,7 @@
                         <outlet property="tableHeight" destination="E5z-aZ-l3f" id="78q-Ii-xST"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRS-fc-DbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756.52173913043487" y="-2.6785714285714284"/>
         </scene>
