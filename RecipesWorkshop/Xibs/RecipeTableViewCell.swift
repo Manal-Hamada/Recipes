@@ -24,7 +24,6 @@ class RecipeTableViewCell: UITableViewCell {
         // Initialization code
     }
     @IBAction func favBtn(_ sender: UIButton) {
-        
         onclickOnFavBtn?()
     }
     

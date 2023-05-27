@@ -11,8 +11,9 @@ protocol HomeViewModelType {
     func getRecipeAtIndexPath(row : Int) -> Result
     func getCategoriesCount() -> Int
     func getCategoryAtIndexPath(row : Int) -> HomeCollectionViewCellViewModel
-    
-    
+    func deleteRecipe(recipeID : Int)
+    func insertRecipe(newRecipe: LocalRecipe)
+    func ifRecipeIsFav(recipeID : Int)-> Bool
 }
 
 class HomeViewModel : HomeViewModelType{
@@ -20,12 +21,14 @@ class HomeViewModel : HomeViewModelType{
     
     var bindCategoryMealsToViewController: (() -> ())?
     var bindCategoryCellsToViewController: (() -> ())?
-    
-    
     var networkManager : NetworkManager = NetworkManager()
+    var favCoreData : LocalSource?
     var categories : [HomeCollectionViewCellViewModel] = HomeCollectionViewCellViewModel().setCategories()
     var result : [Result] = []
     
+    init(favCoreData: LocalSource) {
+        self.favCoreData = favCoreData
+    }
     var cellResults : [HomeTableCellViewModel]!{
         didSet{
             bindCategoryCellsToViewController?()
@@ -42,6 +45,19 @@ class HomeViewModel : HomeViewModelType{
             
         })
         
+    }
+    
+    func deleteRecipe(recipeID : Int){
+        favCoreData?.deleteRecipe(recipeID: recipeID)
+    }
+    func insertRecipe(newRecipe: LocalRecipe){
+        print("viewmodel \(newRecipe)")
+        favCoreData?.insert(newRecipe: newRecipe)
+    }
+    func ifRecipeIsFav(recipeID : Int)-> Bool{
+        guard let result = favCoreData?.getRecipeFromLocal(id: recipeID) else {return false}
+        return result
+                
     }
     
     func getRecipesCount() -> Int {

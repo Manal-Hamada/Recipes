@@ -20,6 +20,13 @@ class FavotiteViewController: UIViewController , UITableViewDelegate, UITableVie
 //        let recipe = LocalRecipe(id: 1, name: "name", owner: "owner", category: "cat", yields: "tield", bgImg: "")
 //        favViewModel.insertRecipe(newRecipe: recipe)
         
+        let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
+        favTableView.register(nib, forCellReuseIdentifier: "cell")
+        
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
         favViewModel.bindResultToViewController = {
             [weak self] in
             DispatchQueue.main.async {
@@ -31,11 +38,6 @@ class FavotiteViewController: UIViewController , UITableViewDelegate, UITableVie
             }
         }
         favViewModel.getItems()
-        
-        let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
-        favTableView.register(nib, forCellReuseIdentifier: "cell")
-        
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +74,7 @@ class FavotiteViewController: UIViewController , UITableViewDelegate, UITableVie
         }
         
         let url = URL(string: favRecipes[indexPath.row].bgImg ?? "")
-        
+        cell.recipeBgImg.layer.cornerRadius = 20.0
         cell.recipeBgImg.kf.setImage(
             with: url,
             placeholder: UIImage(named: "background"),

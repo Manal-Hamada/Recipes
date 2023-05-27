@@ -8,13 +8,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet weak var loading: AnimationView!
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var recipesTable: UITableView!
+    var favCoreData = FavCodeData.sharedDB
     
     var viewModel : HomeViewModelType?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = HomeViewModel()
+        viewModel = HomeViewModel(favCoreData: favCoreData)
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         recipesTable.register(nib, forCellReuseIdentifier: "cell")
@@ -23,7 +24,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         playLottie()
-        getData(categoryName: viewModel?.getCategoryAtIndexPath(row: 0).categoryendpoint ?? "")
+        let reachability = try! Reachability()
+        if reachability.connection != .unavailable{
+            getData(categoryName: viewModel?.getCategoryAtIndexPath(row: 0).categoryendpoint ?? "")
+        }
+        else{
+            
+            let alert : UIAlertController = UIAlertController(title: "ALERT!", message: "No Network connection", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel,handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.loading.stop()
+        }
+        
     }
     
     func getData(categoryName:String){
@@ -45,9 +58,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.loading.loopMode = .loop
         self.loading.animationSpeed = 0.5
         self.loading.play()
-    
+        
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -57,14 +70,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let cell : CategoryCollectionViewCell  = categoryCollection.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         cell.bg.layer.cornerRadius = 20.0
         
-    
+        
         let category = viewModel?.getCategoryAtIndexPath(row: indexPath.row)
         
         if indexPath.row == 0 {
             cell.isSelected = true
             cell.bg.backgroundColor = UIColor(named: "main")
         }
-
+        
         
         cell.categoryImg.image = UIImage(named: category?.cataegoryImg ?? "")
         cell.categoryName.text = category?.categoryName
@@ -78,14 +91,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         selectedItem.bg.backgroundColor = UIColor(named: "main")
         self.UnSelectItems(selectedItem: indexPath,collectionView: collectionView)
         viewModel?.fetchCategoryMeals(tag: viewModel?.getCategoryAtIndexPath(row: indexPath.row).categoryendpoint ?? "", endPoint: .recipes)
-       //getData(categoryName:viewModel?.getCategoryAtIndexPath(row: indexPath.row).categoryendpoint ?? "" )
+        //getData(categoryName:viewModel?.getCategoryAtIndexPath(row: indexPath.row).categoryendpoint ?? "" )
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = categoryCollection.frame.width
-
+        
         return CGSize(width:( width/5 - 2 ), height: 100)
     }
     
