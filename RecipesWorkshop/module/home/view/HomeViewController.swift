@@ -1,11 +1,11 @@
 import UIKit
 import Kingfisher
+import Reachability
 
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     
     
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var recipesTable: UITableView!
     var categoryItems : Array<Result>!
@@ -14,31 +14,42 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        indicator.startAnimating()
         viewModel = HomeViewModel()
         categoryItems = []
         self.categoryCollection.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         recipesTable.register(nib, forCellReuseIdentifier: "cell")
         getData(categoryName: "breakfast")
-        indicator.stopAnimating()
+        
+        
         print("items count \(categoryItems.count)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getData(categoryName: "breakfast")
     }
     
     func getData(categoryName:String){
         self.categoryItems = []
         self.recipesTable.reloadData()
-        self.indicator.startAnimating()
+        recipesTable.alpha = 0
+        
         self.viewModel.bindCategoryMealsToViewController = {[weak self ] in
             DispatchQueue.main.async { [self] in
                 self?.categoryItems = self?.viewModel.result
                 self!.recipesTable.reloadData()
-                
             }
             
         }
         viewModel.fetchCategoryMeals(url: categoryName)
-        self.indicator.stopAnimating()
+        recipesTable.alpha = 1
+    }
+    
+    func testNetwork(){
+       
+
+        
     }
     
     
@@ -135,9 +146,12 @@ extension HomeViewController :UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = self.recipesTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeTableViewCell
-        var mealImgUrl = URL(string: categoryItems[indexPath.row].thumbnailURL ?? "")
+        let mealImgUrl = URL(string: categoryItems[indexPath.row].thumbnailURL ?? "")
+        cell.mealImg.layer.cornerRadius = 20.0
         cell.mealImg.kf.setImage(with: mealImgUrl)
-        
+        cell.servings.text = "\(String(describing: categoryItems[indexPath.row].numServings ?? 0))"
+        cell.chefName.text = categoryItems[indexPath.row].credits?[0].name
+        cell.mealName.text = categoryItems[indexPath.row].name
         return cell
     }
     

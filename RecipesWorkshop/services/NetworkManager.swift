@@ -25,7 +25,7 @@ class NetworkManager : NetworkServicing{
         
         AF.request("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=\(url)", method: .get, headers: header).responseJSON{ response in
             do{
-                let result = try JSONDecoder().decode(T.self, from: response.data!)
+                let result = try JSONDecoder().decode(T.self, from: response.data ?? Data())
                 debugPrint(result)
                 compilitionHandler(result)
             }catch let error {
